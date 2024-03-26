@@ -47,7 +47,7 @@ about_me = {
     }
 
 
-
+#Практика: Часть 2. доп задание п.2
 @app.route("/quotes/filter", methods=['GET'])
 def search_quotes():
     result_list = []
@@ -71,7 +71,7 @@ def search_quotes():
 
 
 
-
+#Практика: Часть 2. Задание 5
 @app.route("/quotes/<int:quote_id>", methods=['DELETE'])
 def delete(quote_id):
     for quote in quotes:
@@ -86,7 +86,7 @@ def delete(quote_id):
 
 
 
-
+#Практика: Часть 2. Задание 4
 @app.route("/quotes/<int:quote_id>", methods=['PUT'])
 def edit_quote(quote_id):
     new_data = request.json
@@ -112,7 +112,7 @@ def get_new_quote_id():
     return quotes[-1]["id"] + 1
 
 
-
+#Практика: Часть 2. доп задание п.1
 def add_new_quote(json_request):
     
     new_quote = json_request.copy()
@@ -127,6 +127,7 @@ def add_new_quote(json_request):
 
 
 
+#Практика: Часть 2. Задание 3
 @app.route("/quotes", methods=['POST'])
 def add_quote():
    
@@ -137,11 +138,13 @@ def add_quote():
 
 
 
+#Практика: Часть 1. Задание 4
 @app.route("/random")
 def show_random():
     return quotes[random.randint(0, len(quotes) - 1)]
 
                  
+#Практика: Часть 1. Задание 3
 @app.route("/count")
 def show_count():
     return {
@@ -149,6 +152,7 @@ def show_count():
         }
 
 
+#Практика: Часть 1. Задание 1 и Задание 2
 @app.route('/quotes/<int:quota_id>')
 def show_quota(quota_id):
     for quota in quotes:
